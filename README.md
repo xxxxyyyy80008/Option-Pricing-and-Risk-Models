@@ -56,6 +56,7 @@ Each notebook combines rigorous mathematical implementation with practical appli
 
 **File**: `02_implied_volatility_surface.ipynb`
 
+- **[Documentation](https://github.com/xxxxyyyy80008/Option-Pricing-and-Risk-Models/blob/main/docs/02_black_scholes_greeks_analysis.md)**
 - **[Kaggle Notebook](https://www.kaggle.com/code/xxxxyyyy80008/black-scholes-option-pricing-with-greeks-analysis)**
 - **[Github Notebook](https://github.com/xxxxyyyy80008/Option-Pricing-and-Risk-Models/blob/main/notebooks/02_black_scholes_greeks_analysis.ipynb)**
 
@@ -91,8 +92,9 @@ Each notebook combines rigorous mathematical implementation with practical appli
 
 **File**: `03_comprehensive_greeks_analysis.ipynb`
 
-- **[Kaggle Notebook](https://github.com/xxxxyyyy80008/Option-Pricing-and-Risk-Models/blob/main/notebooks/03_black_scholes_implied_vol_surface.ipynb)**
-- **[Github Notebook](https://www.kaggle.com/code/xxxxyyyy80008/option-pricing-implied-volatility-surface/)**
+- **[Documentation](https://github.com/xxxxyyyy80008/Option-Pricing-and-Risk-Models/blob/main/docs/03_black_scholes_implied_vol_surface.md)**
+- **[Kaggle Notebook](https://www.kaggle.com/code/xxxxyyyy80008/option-pricing-implied-volatility-surface/)**
+- **[Github Notebook](https://github.com/xxxxyyyy80008/Option-Pricing-and-Risk-Models/blob/main/notebooks/03_black_scholes_implied_vol_surface.ipynb)**
 
 **Purpose**: Calculate, visualize, and analyze all five primary Option Greeks with multi-dimensional sensitivity analysis and portfolio risk management applications.
 
