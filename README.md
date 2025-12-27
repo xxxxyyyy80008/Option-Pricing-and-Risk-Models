@@ -30,6 +30,7 @@ Each notebook combines rigorous mathematical implementation with practical appli
 
 **File**: `01_black_scholes_monte_carlo.ipynb` 
 
+- **[Documentation](https://github.com/xxxxyyyy80008/Option-Pricing-and-Risk-Models/blob/main/docs/01_black_scholes_monte_carlo.md)**
 - **[Kaggle Notebook](https://www.kaggle.com/code/xxxxyyyy80008/black-scholes-option-pricing-and-monte-carlo/)**
 - **[Github Notebook](https://github.com/xxxxyyyy80008/Option-Pricing-and-Risk-Models/blob/main/notebooks/01_black_scholes_monte_carlo.ipynb)**
 
