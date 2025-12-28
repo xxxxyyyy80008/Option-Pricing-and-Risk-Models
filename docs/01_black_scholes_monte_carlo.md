@@ -171,7 +171,7 @@ Differences between model and market prices attributed to:
 
 ---
 
-## 📚 References
+##  References
 
 1. **Black, F., & Scholes, M. (1973)**  
    "The Pricing of Options and Corporate Liabilities"  
