@@ -14,9 +14,10 @@ Option pricing implementation featuring One-step and two-step binomial trees (CR
 - **`black_scholes_put()`** - European put option price
 
 **Formula:**
-$
+
+$$
 C(S,t) = S e^{-dT} N(d_1) - K e^{-rT} N(d_2)
-$
+$$
 
 $$
 d_1 = \frac{\ln(S/K) + (r - d + \sigma^2/2)T}{\sigma\sqrt{T}}
@@ -34,6 +35,7 @@ $$
 **Function:** `one_step_binomial_crr()`
 
 **Parameters:**
+
 $$
 u = e^{\sigma\sqrt{\Delta t}}, \quad d = \frac{1}{u}
 $$
@@ -46,6 +48,7 @@ $$
 **Function:** `one_step_binomial_gbm()`
 
 **Parameters:**
+
 $$
 u = e^{(r-d-0.5\sigma^2)\Delta t + \sigma\sqrt{\Delta t}}
 $$
@@ -113,11 +116,13 @@ As N → ∞, binomial price → Black-Scholes price
 **Function:** `monte_carlo_gbm()`
 
 **Geometric Brownian Motion:**
+
 $$
 S_t = S_0 \exp\left[(r - d - \frac{\sigma^2}{2})t + \sigma W_t\right]
 $$
 
 **Discretization:**
+
 $$
 S_{t+\Delta t} = S_t \exp\left[(r - d - \frac{\sigma^2}{2})\Delta t + \sigma\sqrt{\Delta t}Z\right]
 $$
@@ -172,21 +177,25 @@ Side-by-side visualization:
 ##  Mathematical Foundations
 
 ### Risk-Neutral Valuation
+
 $$
 C_0 = e^{-rT} \mathbb{E}^Q[\max(S_T - K, 0)]
 $$
 
 ### Binomial Risk-Neutral Probability
+
 $$
 p = \frac{e^{(r-d)\Delta t} - d}{u - d}
 $$
 
 ### No-Arbitrage Condition
+
 $$
 d < e^{r\Delta t} < u
 $$
 
 ### Put-Call Parity
+
 $$
 C - P = S_0 e^{-dT} - K e^{-rT}
 $$
