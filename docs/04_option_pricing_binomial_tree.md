@@ -70,13 +70,6 @@ $$
 
 **Function:** `two_step_binomial_crr()`
 
-**Tree Structure:** `Time:     0           1           2
-S₀₀
-S₁₀         S₂₀
-S₁₁
-S₁₁         S₂₁
-S₂₂`
-
 
 **Features:**
 
@@ -84,13 +77,6 @@ S₂₂`
 - Early exercise capability
 - Backward induction pricing
 - Visual tree construction
-
-**Pricing Algorithm:**
-```
-For each node (i, j) from maturity to present:
-Option[i,j] = e^(-r·Δt) × [p × Option[i,j+1] + (1-p) × Option[i+1,j+1]]
-If American: Option[i,j] = max(Option[i,j], Intrinsic Value)
-```
 
 
 ---
