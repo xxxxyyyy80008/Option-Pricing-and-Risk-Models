@@ -1,11 +1,11 @@
-# Option Pricing Analysis 
+# Option Pricing: Binomial Tree and Monte Carlo Comparison
 
 ## Overview
-Comprehensive option pricing implementation featuring binomial trees, Monte Carlo simulation, delta hedging, and implied volatility calculation using Newton's method.
+Option pricing implementation featuring One-step and two-step binomial trees (CRR and GBM), Monte Carlo simulation with Geometric Brownian Motion and Black-Scholes model for comparison
 
 ---
 
-##  Script Components
+##  Components
 
 ### 1. Black-Scholes Functions
 - **`black_scholes_d1()`** - Calculate d₁ parameter
@@ -14,9 +14,9 @@ Comprehensive option pricing implementation featuring binomial trees, Monte Carl
 - **`black_scholes_put()`** - European put option price
 
 **Formula:**
-$$
+$
 C(S,t) = S e^{-dT} N(d_1) - K e^{-rT} N(d_2)
-$$
+$
 
 $$
 d_1 = \frac{\ln(S/K) + (r - d + \sigma^2/2)T}{\sigma\sqrt{T}}
@@ -28,41 +28,7 @@ $$
 
 ---
 
-### 2. Greeks Calculations
-Complete sensitivity measures for risk management:
-
-| Greek | Call Function | Put Function | Description |
-|-------|--------------|--------------|-------------|
-| **Delta** | `calculate_delta_call()` | `calculate_delta_put()` | Price sensitivity to stock price |
-| **Gamma** | `calculate_gamma()` | `calculate_gamma()` | Delta sensitivity to stock price |
-| **Vega** | `calculate_vega()` | `calculate_vega()` | Price sensitivity to volatility |
-| **Theta** | `calculate_theta_call()` | `calculate_theta_put()` | Price sensitivity to time decay |
-
----
-
-### 3. Implied Volatility - Newton's Method
-
-**Function:** `implied_volatility_newton()`
-
-**Algorithm:**
-$$
-\sigma_{n+1} = \sigma_n - \frac{C(\sigma_n) - C_{market}}{Vega(\sigma_n)}
-$$
-
-**Parameters:**
-- Initial guess: σ₀ = 0.3
-- Max iterations: 100
-- Convergence tolerance: 10⁻⁶
-
-**Features:**
-- Iterative root-finding method
-- Handles both call and put options
-- Automatic convergence detection
-- Guards against negative volatility
-
----
-
-### 4. One-Step Binomial Tree
+### 2. One-Step Binomial Tree
 
 #### CRR Method
 **Function:** `one_step_binomial_crr()`
@@ -97,7 +63,7 @@ $$
 
 ---
 
-### 5. Two-Step Binomial Tree
+### 3. Two-Step Binomial Tree
 
 **Function:** `two_step_binomial_crr()`
 
@@ -126,7 +92,7 @@ If American: Option[i,j] = max(Option[i,j], Intrinsic Value)
 
 ---
 
-### 6. N-Step Binomial Tree
+### 4. N-Step Binomial Tree
 
 **Function:** `n_step_binomial_crr()`
 
@@ -142,7 +108,7 @@ As N → ∞, binomial price → Black-Scholes price
 
 ---
 
-### 7. Monte Carlo Simulation (GBM)
+### 5. Monte Carlo Simulation (GBM)
 
 **Function:** `monte_carlo_gbm()`
 
@@ -167,127 +133,35 @@ where Z ~ N(0,1)
 
 ---
 
-### 8. Delta Hedging Simulation
 
-**Function:** `delta_hedging_simulation()`
-
-**Strategy:**
-1. Sell 1 option
-2. Buy Δ shares of stock
-3. Rebalance periodically
-4. Track P&L
-
-**Portfolio Value:**
-$$
-V_t = V_{t-1} e^{r\Delta t} + \Delta_{t-1}(S_t - S_{t-1}) - (\Delta_t - \Delta_{t-1})S_t
-$$
-
-**Returns:**
-- Final hedge P&L
-- Stock price path
-- Delta values over time
-- Portfolio value evolution
-
----
-
-## 📊 Visualizations Generated
+##  Visualizations 
 
 ### 1. Convergence Analysis
 - **Binomial Tree Convergence**: N-step prices vs Black-Scholes
 - **Monte Carlo Convergence**: Price and standard error vs simulations
 
-### 2. Delta Hedging Performance
-Four-panel display:
-- Stock price path
-- Delta evolution
-- Portfolio value
-- Cumulative P&L
-
-### 3. Monte Carlo Paths
+### 2. Monte Carlo Paths
 - 20 sample paths from 1,000 simulations
 - Strike price reference line
 - Time evolution from 0 to T
 
-### 4. Two-Step Tree Diagrams
+### 3. Two-Step Tree Diagrams
 Side-by-side visualization:
 - Stock price tree with values
 - Option value tree with values
 - Arrow connections between nodes
 
-### 5. Greeks Sensitivity
-- **Delta vs Stock Price**: Call and put deltas
-- **Gamma vs Stock Price**: Convexity measure
-- **Option Price vs Volatility**: Vega illustration
-- **Vega vs Volatility**: Sensitivity of vega
-
-### 6. Hedging Distribution
-- **P&L Histogram**: Distribution across multiple simulations
-- **P&L Timeline**: Sequential simulation results
-
-### 7. Implied Volatility Surface
-- **3D Surface Plot**: IV across strikes and maturities
-- **Contour Plot**: 2D representation of IV surface
-
 ---
 
-## 🔢 Example Output
 
-### Pricing Comparison
-```
-Parameters: S0=100, K=100, r=0.05, d=0.02, σ=0.2, T=1.0
+## Features
 
-Method                          Call Price      Put Price
-─────────────────────────────────────────────────────────
-Black-Scholes                   10.450683       7.365497
-One-Step Binomial (CRR)         10.404291       7.319105
-Two-Step Binomial (CRR)         10.434095       7.348909
-100-Step Binomial (CRR)         10.450512       7.365326
-Monte Carlo (100k sims)         10.451234       7.366048
-
-```
-
-
-### Greeks Summary
-```
-
-Greek                Call            Put
-──────────────────────────────────────────
-Delta                0.638270       -0.334638
-Gamma                0.018806        0.018806
-Vega                37.612066       37.612066
-Theta               -6.281447        0.811825
-
-```
-
-### Convergence Results
-
-```
-N-Step Binomial Convergence:
-N =   5: Price = 10.533924, Error = 0.083241
-N =  10: Price = 10.470909, Error = 0.020226
-N =  20: Price = 10.455736, Error = 0.005053
-N =  50: Price = 10.451876, Error = 0.001193
-N = 100: Price = 10.450512, Error = 0.000171
-```
-
-
----
-
-## 🎯 Key Features
-
-### ✅ Implementation Characteristics
-- **No Classes**: Pure functional programming approach
-- **No Logging**: Clean output without debugging statements
-- **No Vectorization**: Explicit loops for clarity
-- **Educational Focus**: Clear variable names and comments
-
-### ✅ Numerical Methods
+###  Numerical Methods
 1. **Binomial Trees**: CRR and GBM parameterizations
 2. **Monte Carlo**: Geometric Brownian Motion simulation
-3. **Newton's Method**: Implied volatility calculation
 4. **Backward Induction**: American option pricing
 
-### ✅ Option Types Supported
+###  Option Types Supported
 - European Call/Put
 - American Call/Put
 - Binary Call/Put (cash-or-nothing)
@@ -295,7 +169,7 @@ N = 100: Price = 10.450512, Error = 0.000171
 
 ---
 
-## 📐 Mathematical Foundations
+##  Mathematical Foundations
 
 ### Risk-Neutral Valuation
 $$
@@ -319,7 +193,7 @@ $$
 
 ---
 
-## 🚀 Usage Example
+##  Usage Example
 
 ```python
 # Set parameters
@@ -349,18 +223,6 @@ mc_price, mc_error, paths = monte_carlo_gbm(
     S0, K, r, d, sigma, T, 10000, 100, 'call', seed=42
 )
 
-# Greeks
-delta = calculate_delta_call(S0, K, r, d, sigma, T)
-gamma = calculate_gamma(S0, K, r, d, sigma, T)
-vega = calculate_vega(S0, K, r, d, sigma, T)
 
-# Implied volatility
-market_price = 10.45
-implied_vol = implied_volatility_newton(market_price, S0, K, r, d, T, 'call')
-
-# Delta hedging
-hedge_pnl, stock_path, delta_path, portfolio, time_path = delta_hedging_simulation(
-    S0, K, r, d, sigma, T, 50, 'call', seed=42
-)
 ```
 
