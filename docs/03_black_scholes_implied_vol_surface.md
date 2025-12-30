@@ -1,8 +1,8 @@
 # Black-Scholes Option Pricing - Implied Volatility Surface Analysis
 
 **Notebooks**
-- **[Kaggle Notebook](https://github.com/xxxxyyyy80008/Option-Pricing-and-Risk-Models/blob/main/notebooks/03_black_scholes_implied_vol_surface.ipynb)**
-- **[Github Notebook](https://www.kaggle.com/code/xxxxyyyy80008/option-pricing-implied-volatility-surface/)**
+- **[Github Notebook](https://github.com/xxxxyyyy80008/Option-Pricing-and-Risk-Models/blob/main/notebooks/03_black_scholes_implied_vol_surface.ipynb)**
+- **[Kaggle Notebook](https://www.kaggle.com/code/xxxxyyyy80008/option-pricing-implied-volatility-surface/)**
 
 ##  Overview
 
