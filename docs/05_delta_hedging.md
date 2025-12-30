@@ -1,5 +1,11 @@
 #  Delta Hedging 
 
+
+**Notebooks**
+- **[Kaggle Notebook](https://www.kaggle.com/code/xxxxyyyy80008/option-pricing-delta-hedging)**
+- **[Github Notebook](https://github.com/xxxxyyyy80008/Option-Pricing-and-Risk-Models/blob/main/notebooks/05_delta_hedging.ipynb)**
+
+
 ## Overview
 This notebook implements **delta hedging strategies** for European options, with detailed profit & loss (P&L) attribution and hedging error analysis. 
 
