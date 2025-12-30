@@ -1,5 +1,11 @@
 # Option Pricing: Binomial Tree and Monte Carlo Comparison
 
+
+**Notebooks**
+- **[Github Notebook](https://github.com/xxxxyyyy80008/Option-Pricing-and-Risk-Models/blob/main/notebooks/04_option_pricing_binomial_tree.ipynb)**
+- **[Kaggle Notebook](https://www.kaggle.com/code/xxxxyyyy80008/option-pricing-binomial-tree)**
+
+
 ## Overview
 Option pricing implementation featuring One-step and two-step binomial trees (CRR and GBM), Monte Carlo simulation with Geometric Brownian Motion and Black-Scholes model for comparison
 
