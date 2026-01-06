@@ -1,5 +1,5 @@
 # Option Pricing and Risk Models
-A collection of Jupyter notebooks implementing Black-Scholes, binomial trees, Monte Carlo simulations, and risk models for option pricing. Includes Greeks analysis and implied volatility surfaces.
+Implementations of Black-Scholes, binomial trees, Monte Carlo simulations, and risk models for option pricing. Includes Greeks analysis and implied volatility surfaces.
 
 
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/)
@@ -12,7 +12,7 @@ A collection of Jupyter notebooks implementing Black-Scholes, binomial trees, Mo
 
 ## Notebooks 
 
-This repository contains notebooks that provide a complete framework for options pricing and risk analysis:
+This repository contains notebooks that provide implementation of options pricing and risk analysis:
 
 |#| Notebook|Details | Implementation |
 |--|---------|----------------|--------|
